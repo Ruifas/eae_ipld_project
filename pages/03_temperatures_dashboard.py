@@ -49,7 +49,7 @@ temps_df["AvgTemperatureCelsius"] = (temps_df["AvgTemperatureFahrenheit"] - 32) 
 # ----- Extracting some basic information from the dataset -----
 
 # TODO: Ex 3.3: How many different cities are there? Provide a list of them.
-unique_countries_list = temps_df["Country"].unique().tolist()  # TODO: this should be a list of unique countries
+unique_cities_list = temps_df["City"].unique().tolist()  # TODO: this should be a list of unique cities
 
 # TODO: Ex 3.4: Which are the minimum and maximum dates?
 min_date = temps_df["Date"].min()
@@ -71,8 +71,8 @@ st.write("##")
 st.header("Basic Information")
 
 cols1 = st.columns([4, 1, 6])
-if unique_countries_list is not None:
-    cols1[0].dataframe(pd.Series(unique_countries_list, name="Cities"), width="content")
+if unique_cities_list is not None:
+    cols1[0].dataframe(pd.Series(unique_cities_list, name="Cities"), width="content")
 else:
     cols1[0].write("⚠️ You still need to develop the Ex 3.3.")
 
@@ -103,12 +103,9 @@ else:
 st.write("##")
 st.header("Comparing the Temperatures of the Cities")
 
-if unique_countries_list is not None:
+if unique_cities_list is not None:
     # Getting the list of cities to compare from the user
-    default_cities = [c for c in ["Buenos Aires", "Dakar"] if c in unique_countries_list]
-
-    selected_cities = st.multiselect("Select the cities to compare:",unique_countries_list,default=default_cities,max_selections=4)
-
+    selected_cities = st.multiselect("Select the cities to compare:",unique_cities_list,default=["Buenos Aires", "Dakar"],max_selections=4)
     cols2 = st.columns([6, 1, 6])
 
     start_date = cols2[0].date_input("Select the start date:", pd.to_datetime("2009-01-01").date())     # Getting the start date from the user
@@ -117,7 +114,7 @@ if unique_countries_list is not None:
 else:
     st.subheader("⚠️ You still need to develop the Ex 3.3.")
 
-if unique_countries_list is not None and len(selected_cities) > 0:
+if unique_cities_list is not None and len(selected_cities) > 0:
 
     c = st.container(border=True)
 
