@@ -4,7 +4,7 @@ import base64
     
 # ----- Page configs (tab title, favicon) -----
 st.set_page_config(
-    page_title="<Your Name> Portfolio",
+    page_title="Rui Chaves Portfolio",
     page_icon="📊",
 )
 
@@ -16,19 +16,19 @@ def home_page():
         st.header("Introduction to Programming Languages for Data")
         st.write("###")
         st.write("***Final Project - Dec 2025***")
-        st.write("**Author:** <your name> ")
+        st.write("**Author:** Rui Chaves ")
         st.write("**Instructor:** [Enric Domingo](https://github.com/enricd)")
 
 
     # ----- Top title -----
-    st.html("""<div style="text-align: center;"><h1 style="text-align: center;">👋 Hi! My name is Python</h1></div>""")  # TODO: Add your name
+    st.html("""<div style="text-align: center;"><h1 style="text-align: center;">👋 Hi! My name is Rui</h1></div>""")  # TODO: Add your name
 
 
     # ----- Profile image file -----
-    profile_image_file_path = "profile.png"       # TODO: Upload your profile image to the same folder as this script and update this if it has a different name
+    profile_image_file_path = "eu.jpg"       # TODO: Upload your profile image to the same folder as this script and update this if it has a different name
 
     with open(profile_image_file_path, "rb") as img_file:
-        img = "data:image/png;base64," + base64.b64encode(img_file.read()).decode()
+        img = "data:image/jpg;base64," + base64.b64encode(img_file.read()).decode()
 
 
     # ----- Your Profile Image -----
@@ -40,7 +40,7 @@ def home_page():
 
 
     # ----- Personal title or short description -----
-    current_role = "Current Role and/or Studies or Description"   # TODO: Change this
+    current_role = "Data Scientist and Master Student in Big Data and Analytics"   # TODO: Change this
 
     st.html(f"""<div style="text-align: center;"><h4><i>{current_role}</i></h4></div>""")
 
@@ -52,17 +52,17 @@ def home_page():
 
     # TODO: Modify and adapt the following lines to your info, you can add or remove some details if you want
     st.write("""
-    - 🧑‍💻 I am a <Current Role and/or Studies> that you are doing
+    - 🧑‍💻 I am a Data Scientist and Master Student in Big Data and Analytics
 
-    - 🛩️ prev: <Previous Experience, Background or Studies>
+    - 🛩️ prev: Bachelor in Data Science
 
-    - ❤️ <Your Passion and/or Interests>
+    - ❤️ Passionate about Football ⚽, Music 🎵, Traveling 🌍 and games 🎮
 
-    - 🤖 <Your Personal Projects>
+    - 🤖 My Personal Projects include machine learning and data analytics
 
-    - 🏂 <Your Hobbies>
+    - 🏂 My hobbies include hanging out, gaming and watch series/movies
 
-    - 📫 How to reach me: <Your Email>
+    - 📫 How to reach me: rpereirachaves@student.eae.es
 
     - 🏠 Barcelona
     """)
