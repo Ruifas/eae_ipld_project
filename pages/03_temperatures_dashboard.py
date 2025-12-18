@@ -155,12 +155,6 @@ if unique_cities_list is not None and len(selected_cities) > 0:
     plt.legend()
 
     c.pyplot(fig)
-    plt.xlabel("Temperature (°C)")  # TODO
-    plt.ylabel("Frequency")  # TODO
-
-    plt.legend()
-
-    c.pyplot(fig)
 
 
 
